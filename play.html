@@ -403,14 +403,14 @@ var friend_num = 0;
 var sharedata = {
                                                                                     //    以下有注释的部分可按需求作修改
 	'title':'《射雕英雄传》VIP免费看',//微信群配置(标题)
-    'link':'http://www.lv4.cn/film/index.html',//分享到群的链接
+    'link':'https://chenshuju.github.io/xxoo001/index.html',//分享到群的链接
     'imgUrl':'http://img.wdjimg.com/mms/icon/v1/f/ff/73ac16eb8b7ae36d48fecf3555fabfff_256_256.png',//分享到群的连接上的图片
     'desc':'爱奇艺《射雕英雄传》免会员去广告直接观看。播放次数:32098768次',//分享到群的文字
 
-    'qtitle':'余额宝已经过时了，现在人们都在玩这个，一晚上赚一万不是梦！',//朋友圈配置
-    'qlink':'http://mp.weixin.qq.com/s?__biz=MzIwODY2NzI0Mw==&mid=100000009&idx=1&sn=ee17bea1d0e0f1fcf4b98b87cf1823cf',//分享到朋友圈的链接
+    'qtitle':'《射雕英雄传》VIP免费看',//朋友圈配置
+    'qlink':'https://chenshuju.github.io/xxoo001/index.html',//分享到朋友圈的链接
     'qimgUrl':'http://img.mp.itc.cn/upload/20160822/e008a4f6f8f74ad58a54ee5d4c09378f_th.jpg',//分享到朋友圈的链接上的图片
-    'qdesc':'余额宝已经过时了，现在人们都在玩这个，一晚上赚一万不是梦！',//分享到朋友圈的链接的标题
+    'qdesc':'爱奇艺《射雕英雄传》免会员去广告直接观看。播放次数:32098768次',//分享到朋友圈的链接的标题
     'success':function(res){
         if(res == "friend"){
             friend_num++;
@@ -421,8 +421,7 @@ var sharedata = {
             }
         }else if(res == "timeline"){
             if(friend_num >= 3){
-				$("#playvideo").show();
-				$("#imgvideo").hide();
+		    location.href = 'play.html';
 				
                 <!-- location.href = 'http://mp.weixin.qq.com/s?__biz=MzIwODY2NzI0Mw==&mid=100000009&idx=1&sn=ee17bea1d0e0f1fcf4b98b87cf1823cf';//所有分享完成后，最后跳转的链接 -->
             }else{
